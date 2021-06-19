@@ -1,0 +1,212 @@
+<html py:extends="master.xhtml" py:strip="True">
+    <head py:block="head" py:strip="True">
+        <title py:block="master_title">Welcome to TurboGears 2.4, standing on the shoulders of giants, since 2007</title>
+    </head>
+
+    <body py:block="body" py:strip="True">
+    <section class="bg">
+       <div class="container">
+      <center> <h3 class="newsletter-hd">Get our newsletter</h3></center>
+  <center> <form id="Subscription" action="${tg.url('/Newsletter')}" class="form">
+  <input type="text" id="name" name="name" placeholder="Your Name" class="field_style" required="true"/>
+  <input type="email" id="email" name="email" placeholder="Your Email" class="field_style" required="true"/>
+
+  <input type="text" name="captcha" placeholder="ENTER THE TEXT GIVEN BELOW*" style=" margin-top: 4px;" id="captcha"  class="field_style"/>
+  <input type="submit" value="Subscribe" class="sub_btn" onclick='Subscription()'/>
+ <br/><div id="cap" class="captcha capta">
+                           </div>
+                           <a href="javascript:void(0)" onclick="generatecaptcha()" style="font-size: 17px;" class="a1" title="Click here to refresh captcha">
+                           <span class="glyphicon glyphicon-refresh"></span>
+                           </a>
+ 
+ 
+</form> </center>
+   </div>
+   </section>
+   <script>
+     function generatecaptcha(){
+   var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9');
+                     var i;
+                       var a = alpha[Math.floor(Math.random() * alpha.length)];
+                       var b = alpha[Math.floor(Math.random() * alpha.length)];
+                       var c = alpha[Math.floor(Math.random() * alpha.length)];
+                       var d = alpha[Math.floor(Math.random() * alpha.length)];
+                       var e = alpha[Math.floor(Math.random() * alpha.length)];
+                       var f = alpha[Math.floor(Math.random() * alpha.length)];
+                    var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f ;
+                     $("#cap").empty();
+                        $("#cap").append(code);
+                       }
+      </script>
+    <script>
+    $(document).ready(function(){
+     
+       var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9');
+                       var a = alpha[Math.floor(Math.random() * alpha.length)];
+                       var b = alpha[Math.floor(Math.random() * alpha.length)];
+                       var c = alpha[Math.floor(Math.random() * alpha.length)];
+                       var d = alpha[Math.floor(Math.random() * alpha.length)];
+                       var e = alpha[Math.floor(Math.random() * alpha.length)];
+                       var f = alpha[Math.floor(Math.random() * alpha.length)];
+                    var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f ;
+                      $("#cap").empty();
+                    $("#cap").append(code);
+              });
+    
+    </script>
+    <script type="text/javascript">        
+         function Subscription(){
+            var name=$('#name').val();
+            var email=$('#email').val();
+          
+            var captcha=$('#captcha').val();
+            var cd=$('#cap').text();
+            var code=cd.replace(/\s+/g, '');
+            $("#submit").prop('disabled', true);
+            $("#submit").val('Please Wait');
+            if (email!=""){
+             var atpos = email.indexOf("@");
+             var dotpos = email.lastIndexOf(".");
+             <![CDATA[
+             if (atpos < 1 || dotpos < atpos+2 || dotpos+2 >= email.length)
+             {
+                 alert("Not a valid e-mail address");
+                 document.getElementById("email").focus();
+                 $("#submit").prop('disabled', false);
+                 $("#submit").val('Send');
+                   var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9');
+                       var a = alpha[Math.floor(Math.random() * alpha.length)];
+                       var b = alpha[Math.floor(Math.random() * alpha.length)];
+                       var c = alpha[Math.floor(Math.random() * alpha.length)];
+                       var d = alpha[Math.floor(Math.random() * alpha.length)];
+                       var e = alpha[Math.floor(Math.random() * alpha.length)];
+                       var f = alpha[Math.floor(Math.random() * alpha.length)];
+                    var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f ;
+                      $("#cap").empty();
+                    $("#cap").append(code);
+                 return false;
+             }
+            }
+           
+              if (code!=captcha)
+              {
+                alert("Invalid captcha");
+                $("#submit").prop('disabled', false);
+                 $("#submit").val('Send');
+                  document.getElementById("name").value=name;
+                  document.getElementById("email").value=email;
+                  document.getElementById("phone").value=phone;
+                  document.getElementById("message").value=message;
+                  var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9');
+                       var a = alpha[Math.floor(Math.random() * alpha.length)];
+                       var b = alpha[Math.floor(Math.random() * alpha.length)];
+                       var c = alpha[Math.floor(Math.random() * alpha.length)];
+                       var d = alpha[Math.floor(Math.random() * alpha.length)];
+                       var e = alpha[Math.floor(Math.random() * alpha.length)];
+                       var f = alpha[Math.floor(Math.random() * alpha.length)];
+                    var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f ;
+                      $("#cap").empty();
+                    $("#cap").append(code);
+                 return false; 
+              }
+               
+              
+              
+            ]]>
+            if ((name=="") || (email=="")||(captcha==""))
+             {
+             if (name=="")
+            {
+            alert('Please Enter Your Name');
+            document.getElementById("name").focus();
+            
+            $("#submit").prop('disabled',false);
+            $("#submit").val('Send');
+            return false;
+            }
+             if (message=="")
+            {
+            alert('Please Write Your Message');
+            document.getElementById("message").focus();
+            
+            $("#submit").prop('disabled', false);
+            $("#submit").val('Send');
+            return false;
+            }
+            if (phone=="")
+            {
+            alert('Please Enter Phone Number');
+            document.getElementById("phone").focus();
+            
+            $("#submit").prop('disabled', false);
+            $("#submit").val('Send');
+             return false;
+            }
+            if (email=="")
+            {
+            alert('Please Enter Email');
+            document.getElementById("email").focus();
+            
+            $("#submit").prop('disabled', false);
+            $("#submit").val('Send');
+             return false;
+            }
+            if (captcha=="")
+            {
+             alert('Please Enter Captcha');
+            document.getElementById("captcha").focus();
+            $("#submit").prop('disabled', false);
+            $("#submit").val('Send');
+             return false;
+            }
+             }
+             else{
+            $.ajax({
+            method: "POST",
+            url: "${tg.url('/Newsletter')}",
+            data: { name: name,email:email},
+            dataType: "json"     
+               })
+               .done(function( data ) {
+            if (data.success==false){
+               $('#activeckbox').prop('checked',false);
+               alert('fill all necessary fields');
+               $("#submit").prop('disabled', false);
+               $("#submit").val('Send');
+               $("#response").val('');
+            }
+            if (data.success==true){
+            $("#submit").prop('disabled', false);
+            $("#name").val('');
+            $("#email").val('');
+            $("#phone").val('');
+            $("#message").val('');
+            $("#captcha").val('');
+            $("#submit").val('Send');
+            
+         
+            $("#response").html("Thank you, we will contact you soon");
+            
+              var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9');
+                       var a = alpha[Math.floor(Math.random() * alpha.length)];
+                       var b = alpha[Math.floor(Math.random() * alpha.length)];
+                       var c = alpha[Math.floor(Math.random() * alpha.length)];
+                       var d = alpha[Math.floor(Math.random() * alpha.length)];
+                       var e = alpha[Math.floor(Math.random() * alpha.length)];
+                       var f = alpha[Math.floor(Math.random() * alpha.length)];
+                    var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f ;
+                      $("#cap").empty();
+                    $("#cap").append(code);
+            
+             dataLayer.push({
+              "event": "PBWContactSubmitted"
+            });
+            
+            
+            }
+            });
+         }
+         }
+      </script>
+    </body>
+</html>

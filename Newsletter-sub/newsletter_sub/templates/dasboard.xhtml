@@ -1,0 +1,33 @@
+<html py:extends="master.xhtml" py:strip="True">
+  <head py:block="head" py:strip="True">
+    <title py:block="master_title">Learning TurboGears 2.4: Quick guide to the Quickstart pages.</title>
+    <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org" />
+  </head>
+
+  <body py:block="body" py:strip="True">
+   <div>
+   <h3>Newsletter Details</h3>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr py:for="newsletter in newsletter">
+    <td py:content="newsletter['name']"/><td py:content="newsletter['email']"/>
+</tr>
+      
+    </tbody>
+   
+</tr>
+  </table>
+  <p class="pagelist">
+        <a class="prevPage" href="/list?page=${tmpl_context.paginators.newsletter.previous_page}">&lt;&lt;&lt;</a>
+        ${tmpl_context.paginators.newsletter.pager(format='~3~', page_param='page', show_if_single_page=True)}
+        <a class="nextPage" href="/list?page=${tmpl_context.paginators.newsletter.next_page}">&gt;&gt;&gt;</a>
+</p>
+   </div>
+  </body>
+</html>
